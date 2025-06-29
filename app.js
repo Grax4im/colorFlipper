@@ -58,12 +58,13 @@ const colors = {
 };
 
 //botão de troca de cor e cor selecinada
-const btn = document.getElementById('btn');
+const btn = document.querySelectorAll('.btn');
 const color = document.querySelector('.color');
 
 //pega o objeto com todas as cores e transforma em uma array unidimensional
 const allColors = Object.values(colors).flat();
 
+//Precisa fazer um loop por todos os botões e colocar as cores correspondentes ao data-color
 btn.addEventListener('click', function() {
     //Gera um numero randomico entre 0 e o número total de cores
     const random = generateRandomNumber();
