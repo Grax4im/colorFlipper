@@ -57,28 +57,20 @@ const colors = {
     ]
 };
 
-//botão de troca de cor e cor selecinada
 const btn = document.querySelectorAll('.btn');
 const color = document.querySelector('.color');
 
-//pega o objeto com todas as cores e transforma em uma array unidimensional
-const allColors = Object.values(colors).flat();
 
 btn.forEach(button =>
 
     button.addEventListener('click', function() {
-        //Gera um numero randomico entre 0 e o número total de cores
-        const random = generateRandomNumber();
         const corSelecionada = button.dataset.color;
-
-        //troca a cor de fundo pela cor gerada aleatória
-        document.body.style.backgroundColor = colors.corSelecionada[random];
-        //trpca a cor do elemento pela gerada aleatória
-        color.textContent = colors.corSelecionada[random];
+        const random = generateRandomNumber(colors[corSelecionada].length - 1 );
+        document.body.style.backgroundColor = colors[corSelecionada][random];
+        color.textContent = colors[corSelecionada][random];
     })
 )
 
-
-function generateRandomNumber() {
-    return Math.round(Math.random() * (allColors.length-1));
+function generateRandomNumber(limite) {
+    return Math.round(Math.random() * (limite));
 }
