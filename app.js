@@ -64,15 +64,20 @@ const color = document.querySelector('.color');
 //pega o objeto com todas as cores e transforma em uma array unidimensional
 const allColors = Object.values(colors).flat();
 
-//Precisa fazer um loop por todos os botões e colocar as cores correspondentes ao data-color
-btn.addEventListener('click', function() {
-    //Gera um numero randomico entre 0 e o número total de cores
-    const random = generateRandomNumber();
-    //troca a cor de fundo pela cor gerada aleatória
-    document.body.style.backgroundColor = allColors[random];
-    //trpca a cor do elemento pela gerada aleatória
-    color.textContent = allColors[random];
-})
+btn.forEach(button =>
+
+    button.addEventListener('click', function() {
+        //Gera um numero randomico entre 0 e o número total de cores
+        const random = generateRandomNumber();
+        console.log(button.dataset.color)
+
+        //troca a cor de fundo pela cor gerada aleatória
+        document.body.style.backgroundColor = allColors[random];
+        //trpca a cor do elemento pela gerada aleatória
+        color.textContent = allColors[random]; 
+    })
+)
+
 
 function generateRandomNumber() {
     return Math.round(Math.random() * (allColors.length-1));
