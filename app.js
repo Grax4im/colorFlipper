@@ -57,17 +57,22 @@ const colors = {
     ]
 };
 
+//botão de troca de cor e cor selecinada
 const btn = document.getElementById('btn');
 const color = document.querySelector('.color');
 
 
 btn.addEventListener('click', function() {
+    //pega o objeto com todas as cores e transforma em uma array unidimensional
     const allColors = Object.values(colors).flat();
+    //Gera um numero randomico entre 0 e o número total de cores
     const random = generateRandomNumber();
+    //troca a cor de fundo pela cor gerada aleatória
     document.body.style.backgroundColor = allColors[random];
-    //color.textContent = colors[random];
+    //trpca a cor do elemento pela gerada aleatória
+    color.textContent = allColors[random];
 })
 
 function generateRandomNumber() {
-    return Math.round(Math.random() * (colors.length-1));
+    return Math.round(Math.random() * (allColors.length-1));
 }
