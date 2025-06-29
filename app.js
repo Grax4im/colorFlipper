@@ -69,12 +69,12 @@ btn.forEach(button =>
     button.addEventListener('click', function() {
         //Gera um numero randomico entre 0 e o número total de cores
         const random = generateRandomNumber();
-        console.log(button.dataset.color)
+        const corSelecionada = button.dataset.color;
 
         //troca a cor de fundo pela cor gerada aleatória
-        document.body.style.backgroundColor = allColors[random];
+        document.body.style.backgroundColor = colors.corSelecionada[random];
         //trpca a cor do elemento pela gerada aleatória
-        color.textContent = allColors[random]; 
+        color.textContent = colors.corSelecionada[random];
     })
 )
 
