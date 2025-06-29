@@ -61,10 +61,10 @@ const colors = {
 const btn = document.getElementById('btn');
 const color = document.querySelector('.color');
 
+//pega o objeto com todas as cores e transforma em uma array unidimensional
+const allColors = Object.values(colors).flat();
 
 btn.addEventListener('click', function() {
-    //pega o objeto com todas as cores e transforma em uma array unidimensional
-    const allColors = Object.values(colors).flat();
     //Gera um numero randomico entre 0 e o número total de cores
     const random = generateRandomNumber();
     //troca a cor de fundo pela cor gerada aleatória
