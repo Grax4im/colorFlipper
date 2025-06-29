@@ -1,5 +1,4 @@
 const colors = [
-const coresCSS = [
     // Cores básicas
     "red", "green", "blue", "yellow", "cyan", "magenta",
     "black", "white", "gray", "silver", "purple", "orange",
